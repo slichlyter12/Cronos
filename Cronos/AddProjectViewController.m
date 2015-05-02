@@ -90,9 +90,7 @@
         NSLog(@"error: %@ %@", error, [error userInfo]);
         abort();
     }
-    
-//    NSLog(@"Created Project: %@", newProject);
-    
+        
 }
 
 - (IBAction)cancelSelected:(id)sender {

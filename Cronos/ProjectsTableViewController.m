@@ -11,6 +11,7 @@
 #import "ProjectsTableViewCell.h"
 #import "Project.h"
 #import "TasksTableViewController.h"
+#import "Task.h"
 
 @interface ProjectsTableViewController () {
     NSArray *projectArray;
@@ -29,12 +30,13 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
     AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = delegate.managedObjectContext;
     
     [self loadData];
-    
+//    [self checkCompatibility];
+    [self shareProjectTitles];
+    [self shareTaskTitles];
 }
 
 - (void)loadData {
@@ -55,9 +57,61 @@
     }
 }
 
+- (void)shareProjectTitles {
+    NSMutableArray *projectTitles = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < [projectArray count]; i++) {
+        Project *project = [projectArray objectAtIndex:i];
+        NSString *title = project.title;
+        
+        [projectTitles addObject:(id)title];
+    }
+    
+    NSUserDefaults *cronosDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.samuellichlyter.cronos"];
+    [cronosDefaults setObject:(id)projectTitles forKey:@"projectTitlesArray"];
+    [cronosDefaults synchronize];
+}
+
+- (void)shareTaskTitles {
+    NSUserDefaults *cronosDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.samuellichlyter.cronos"];
+    for (NSInteger i = 0; i < [projectArray count]; i++) {
+        Project *project = [projectArray objectAtIndex:i];
+        NSArray *taskArray = [project.tasks allObjects];
+        NSMutableArray *taskTitles = [[NSMutableArray alloc] init];
+        for (NSInteger j = 0; j < [taskArray count]; j++) {
+            Task *task = [taskArray objectAtIndex:j];
+            [taskTitles addObject:(id)task.title];
+        }
+        NSString *projectTitle = project.title;
+        [cronosDefaults setObject:(id)taskTitles forKey:[NSString stringWithFormat:@"%@_tasks", projectTitle]];
+    }
+    [cronosDefaults synchronize];
+}
+
+- (void)checkCompatibility {
+    NSUserDefaults *cronosDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.samuellichlyter.cronos"];
+    NSArray *projectTitles = [cronosDefaults valueForKey:@"projectTitlesArray"];
+    NSMutableArray *cdProjectTitles = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < [projectArray count]; i++) {
+        Project *project = [projectArray objectAtIndex:i];
+        NSString *title = project.title;
+        
+        [cdProjectTitles addObject:(id)title];
+    }
+    
+    if ([projectTitles isEqualToArray:cdProjectTitles]) {
+        return;
+    } else {
+        NSLog(@"Error: out of sync data");
+        abort();
+    }
+    
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self loadData];
+    [self shareProjectTitles];
+    [self shareTaskTitles];
     [self.tableView reloadData];
 }
 

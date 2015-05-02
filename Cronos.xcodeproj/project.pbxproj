@@ -19,9 +19,19 @@
 		434B9A011AD372CF00818B7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434B99FF1AD372CF00818B7C /* LaunchScreen.xib */; };
 		434B9A0D1AD372D000818B7C /* CronosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 434B9A0C1AD372D000818B7C /* CronosTests.m */; };
 		434B9A1B1AD3752800818B7C /* AddProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 434B9A1A1AD3752800818B7C /* AddProjectViewController.m */; };
+		436846D21AF1714D00CB4C7E /* TasksInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436846D11AF1714D00CB4C7E /* TasksInterfaceController.m */; };
+		436846D51AF1718600CB4C7E /* RowType.m in Sources */ = {isa = PBXBuildFile; fileRef = 436846D41AF1718600CB4C7E /* RowType.m */; };
 		436DED291AD9AD9900FE737A /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 436DED281AD9AD9900FE737A /* TaskTableViewCell.m */; };
 		436DED2C1AD9AE6700FE737A /* TasksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436DED2B1AD9AE6700FE737A /* TasksTableViewController.m */; };
 		436DED2F1AD9B0A800FE737A /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 436DED2E1AD9B0A800FE737A /* AddTaskViewController.m */; };
+		437B6C3B1AE6054100F86669 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B6C3A1AE6054100F86669 /* InterfaceController.m */; };
+		437B6C3E1AE6054100F86669 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B6C3D1AE6054100F86669 /* NotificationController.m */; };
+		437B6C411AE6054200F86669 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437B6C401AE6054200F86669 /* GlanceController.m */; };
+		437B6C431AE6054200F86669 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437B6C421AE6054200F86669 /* Images.xcassets */; };
+		437B6C471AE6054200F86669 /* Cronos WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 437B6C461AE6054200F86669 /* Cronos WatchKit App.app */; };
+		437B6C4F1AE6054200F86669 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437B6C4D1AE6054200F86669 /* Interface.storyboard */; };
+		437B6C511AE6054200F86669 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437B6C501AE6054200F86669 /* Images.xcassets */; };
+		437B6C541AE6054200F86669 /* Cronos WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 437B6C341AE6054100F86669 /* Cronos WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +42,35 @@
 			remoteGlobalIDString = 434B99E91AD372CF00818B7C;
 			remoteInfo = Cronos;
 		};
+		437B6C481AE6054200F86669 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 434B99E21AD372CF00818B7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 437B6C451AE6054200F86669;
+			remoteInfo = "Cronos WatchKit App";
+		};
+		437B6C521AE6054200F86669 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 434B99E21AD372CF00818B7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 437B6C331AE6054100F86669;
+			remoteInfo = "Cronos WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		437B6C5B1AE6054200F86669 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				437B6C541AE6054200F86669 /* Cronos WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		432487A21AE19BA600475341 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
@@ -57,12 +95,32 @@
 		434B9A0C1AD372D000818B7C /* CronosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CronosTests.m; sourceTree = "<group>"; };
 		434B9A191AD3752800818B7C /* AddProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProjectViewController.h; sourceTree = "<group>"; };
 		434B9A1A1AD3752800818B7C /* AddProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProjectViewController.m; sourceTree = "<group>"; };
+		436846D01AF1714D00CB4C7E /* TasksInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksInterfaceController.h; sourceTree = "<group>"; };
+		436846D11AF1714D00CB4C7E /* TasksInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksInterfaceController.m; sourceTree = "<group>"; };
+		436846D31AF1718600CB4C7E /* RowType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowType.h; sourceTree = "<group>"; };
+		436846D41AF1718600CB4C7E /* RowType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowType.m; sourceTree = "<group>"; };
 		436DED271AD9AD9900FE737A /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		436DED281AD9AD9900FE737A /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
 		436DED2A1AD9AE6700FE737A /* TasksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksTableViewController.h; sourceTree = "<group>"; };
 		436DED2B1AD9AE6700FE737A /* TasksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksTableViewController.m; sourceTree = "<group>"; };
 		436DED2D1AD9B0A800FE737A /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		436DED2E1AD9B0A800FE737A /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
+		437B6C341AE6054100F86669 /* Cronos WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Cronos WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		437B6C371AE6054100F86669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		437B6C381AE6054100F86669 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		437B6C391AE6054100F86669 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		437B6C3A1AE6054100F86669 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		437B6C3C1AE6054100F86669 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		437B6C3D1AE6054100F86669 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		437B6C3F1AE6054200F86669 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		437B6C401AE6054200F86669 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		437B6C421AE6054200F86669 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		437B6C461AE6054200F86669 /* Cronos WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cronos WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		437B6C4C1AE6054200F86669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		437B6C4E1AE6054200F86669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		437B6C501AE6054200F86669 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		43A7A6E11AF045E700E91ADC /* Cronos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Cronos.entitlements; sourceTree = "<group>"; };
+		43A7A6E21AF045FB00E91ADC /* Cronos WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "Cronos WatchKit Extension.entitlements"; path = "Cronos WatchKit Extension/Cronos WatchKit Extension.entitlements"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +138,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		437B6C311AE6054100F86669 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -88,6 +153,8 @@
 			children = (
 				434B99EC1AD372CF00818B7C /* Cronos */,
 				434B9A091AD372D000818B7C /* CronosTests */,
+				437B6C351AE6054100F86669 /* Cronos WatchKit Extension */,
+				437B6C4A1AE6054200F86669 /* Cronos WatchKit App */,
 				434B99EB1AD372CF00818B7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +164,8 @@
 			children = (
 				434B99EA1AD372CF00818B7C /* Cronos.app */,
 				434B9A061AD372D000818B7C /* CronosTests.xctest */,
+				437B6C341AE6054100F86669 /* Cronos WatchKit Extension.appex */,
+				437B6C461AE6054200F86669 /* Cronos WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +197,7 @@
 		434B99ED1AD372CF00818B7C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43A7A6E11AF045E700E91ADC /* Cronos.entitlements */,
 				434B99F11AD372CF00818B7C /* AppDelegate.h */,
 				434B99F21AD372CF00818B7C /* AppDelegate.m */,
 				434B99EE1AD372CF00818B7C /* Info.plist */,
@@ -165,6 +235,53 @@
 			name = "Data Model";
 			sourceTree = "<group>";
 		};
+		437B6C351AE6054100F86669 /* Cronos WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				437B6C391AE6054100F86669 /* InterfaceController.h */,
+				437B6C3A1AE6054100F86669 /* InterfaceController.m */,
+				436846D01AF1714D00CB4C7E /* TasksInterfaceController.h */,
+				436846D11AF1714D00CB4C7E /* TasksInterfaceController.m */,
+				436846D31AF1718600CB4C7E /* RowType.h */,
+				436846D41AF1718600CB4C7E /* RowType.m */,
+				437B6C3C1AE6054100F86669 /* NotificationController.h */,
+				437B6C3D1AE6054100F86669 /* NotificationController.m */,
+				437B6C3F1AE6054200F86669 /* GlanceController.h */,
+				437B6C401AE6054200F86669 /* GlanceController.m */,
+				437B6C421AE6054200F86669 /* Images.xcassets */,
+				437B6C361AE6054100F86669 /* Supporting Files */,
+			);
+			path = "Cronos WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		437B6C361AE6054100F86669 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43A7A6E21AF045FB00E91ADC /* Cronos WatchKit Extension.entitlements */,
+				437B6C371AE6054100F86669 /* Info.plist */,
+				437B6C381AE6054100F86669 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		437B6C4A1AE6054200F86669 /* Cronos WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				437B6C4D1AE6054200F86669 /* Interface.storyboard */,
+				437B6C501AE6054200F86669 /* Images.xcassets */,
+				437B6C4B1AE6054200F86669 /* Supporting Files */,
+			);
+			path = "Cronos WatchKit App";
+			sourceTree = "<group>";
+		};
+		437B6C4B1AE6054200F86669 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				437B6C4C1AE6054200F86669 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,10 +292,12 @@
 				434B99E61AD372CF00818B7C /* Sources */,
 				434B99E71AD372CF00818B7C /* Frameworks */,
 				434B99E81AD372CF00818B7C /* Resources */,
+				437B6C5B1AE6054200F86669 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				437B6C531AE6054200F86669 /* PBXTargetDependency */,
 			);
 			name = Cronos;
 			productName = Cronos;
@@ -203,6 +322,39 @@
 			productReference = 434B9A061AD372D000818B7C /* CronosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		437B6C331AE6054100F86669 /* Cronos WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 437B6C5A1AE6054200F86669 /* Build configuration list for PBXNativeTarget "Cronos WatchKit Extension" */;
+			buildPhases = (
+				437B6C301AE6054100F86669 /* Sources */,
+				437B6C311AE6054100F86669 /* Frameworks */,
+				437B6C321AE6054100F86669 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				437B6C491AE6054200F86669 /* PBXTargetDependency */,
+			);
+			name = "Cronos WatchKit Extension";
+			productName = "Cronos WatchKit Extension";
+			productReference = 437B6C341AE6054100F86669 /* Cronos WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		437B6C451AE6054200F86669 /* Cronos WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 437B6C591AE6054200F86669 /* Build configuration list for PBXNativeTarget "Cronos WatchKit App" */;
+			buildPhases = (
+				437B6C441AE6054200F86669 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cronos WatchKit App";
+			productName = "Cronos WatchKit App";
+			productReference = 437B6C461AE6054200F86669 /* Cronos WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -214,10 +366,28 @@
 				TargetAttributes = {
 					434B99E91AD372CF00818B7C = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = L3W5FDZG36;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					434B9A051AD372D000818B7C = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 434B99E91AD372CF00818B7C;
+					};
+					437B6C331AE6054100F86669 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = L3W5FDZG36;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					437B6C451AE6054200F86669 = {
+						CreatedOnToolsVersion = 6.3;
 					};
 				};
 			};
@@ -236,6 +406,8 @@
 			targets = (
 				434B99E91AD372CF00818B7C /* Cronos */,
 				434B9A051AD372D000818B7C /* CronosTests */,
+				437B6C331AE6054100F86669 /* Cronos WatchKit Extension */,
+				437B6C451AE6054200F86669 /* Cronos WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +427,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		437B6C321AE6054100F86669 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				437B6C471AE6054200F86669 /* Cronos WatchKit App.app in Resources */,
+				437B6C431AE6054200F86669 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		437B6C441AE6054200F86669 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				437B6C4F1AE6054200F86669 /* Interface.storyboard in Resources */,
+				437B6C511AE6054200F86669 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +477,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		437B6C301AE6054100F86669 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				436846D21AF1714D00CB4C7E /* TasksInterfaceController.m in Sources */,
+				437B6C3E1AE6054100F86669 /* NotificationController.m in Sources */,
+				437B6C3B1AE6054100F86669 /* InterfaceController.m in Sources */,
+				436846D51AF1718600CB4C7E /* RowType.m in Sources */,
+				437B6C411AE6054200F86669 /* GlanceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -294,6 +496,16 @@
 			isa = PBXTargetDependency;
 			target = 434B99E91AD372CF00818B7C /* Cronos */;
 			targetProxy = 434B9A071AD372D000818B7C /* PBXContainerItemProxy */;
+		};
+		437B6C491AE6054200F86669 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 437B6C451AE6054200F86669 /* Cronos WatchKit App */;
+			targetProxy = 437B6C481AE6054200F86669 /* PBXContainerItemProxy */;
+		};
+		437B6C531AE6054200F86669 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 437B6C331AE6054100F86669 /* Cronos WatchKit Extension */;
+			targetProxy = 437B6C521AE6054200F86669 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -312,6 +524,14 @@
 				434B9A001AD372CF00818B7C /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		437B6C4D1AE6054200F86669 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				437B6C4E1AE6054200F86669 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -399,9 +619,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cronos/Cronos.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cronos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -410,9 +635,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Cronos/Cronos.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cronos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -451,6 +681,80 @@
 			};
 			name = Release;
 		};
+		437B6C551AE6054200F86669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Cronos WatchKit Extension/Cronos WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Cronos WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		437B6C561AE6054200F86669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Cronos WatchKit Extension/Cronos WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Cronos WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		437B6C571AE6054200F86669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Cronos_WatchKit_Extension;
+				INFOPLIST_FILE = "Cronos WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		437B6C581AE6054200F86669 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = Cronos_WatchKit_Extension;
+				INFOPLIST_FILE = "Cronos WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -477,6 +781,24 @@
 			buildConfigurations = (
 				434B9A141AD372D000818B7C /* Debug */,
 				434B9A151AD372D000818B7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		437B6C591AE6054200F86669 /* Build configuration list for PBXNativeTarget "Cronos WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				437B6C571AE6054200F86669 /* Debug */,
+				437B6C581AE6054200F86669 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		437B6C5A1AE6054200F86669 /* Build configuration list for PBXNativeTarget "Cronos WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				437B6C551AE6054200F86669 /* Debug */,
+				437B6C561AE6054200F86669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
