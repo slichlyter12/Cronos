@@ -6,12 +6,11 @@
 //  Copyright (c) 2015 Samuel Lichlyter. All rights reserved.
 //
 
+#import <CronosKit/CronosKit.h>
 #import "AppDelegate.h"
 #import "ProjectsTableViewController.h"
 #import "ProjectsTableViewCell.h"
-#import "Project.h"
 #import "TasksTableViewController.h"
-#import "Task.h"
 
 @interface ProjectsTableViewController () {
     NSArray *projectArray;

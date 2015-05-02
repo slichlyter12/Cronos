@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Project.h"
+#import <CronosKit/CronosKit.h>
 
 @interface TasksTableViewController : UITableViewController
 

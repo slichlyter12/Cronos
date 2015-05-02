@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AddProjectViewController.h"
-#import "Project.h"
+#import <CronosKit/CronosKit.h>
 
 
 @interface AddProjectViewController ()
