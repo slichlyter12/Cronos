@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432FD2EC1AFEB2820035046D /* CronosKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434CF63F1AF4600200857D0E /* CronosKit.framework */; };
 		433836811AD6ED1800EAB0A7 /* ProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 433836801AD6ED1800EAB0A7 /* ProjectsTableViewController.m */; };
 		433836841AD6ED7F00EAB0A7 /* ProjectsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 433836831AD6ED7F00EAB0A7 /* ProjectsTableViewCell.m */; };
 		434B99F01AD372CF00818B7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 434B99EF1AD372CF00818B7C /* main.m */; };
@@ -203,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432FD2EC1AFEB2820035046D /* CronosKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,6 +1088,7 @@
 				434CF6591AF4600300857D0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		434CF65E1AF4600300857D0E /* Build configuration list for PBXNativeTarget "CronosKitTests" */ = {
 			isa = XCConfigurationList;
@@ -1094,6 +1097,7 @@
 				434CF65B1AF4600300857D0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		437B6C591AE6054200F86669 /* Build configuration list for PBXNativeTarget "Cronos WatchKit App" */ = {
 			isa = XCConfigurationList;

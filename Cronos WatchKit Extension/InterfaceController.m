@@ -28,7 +28,7 @@
     // Configure interface objects here.
     NSUserDefaults *cronosDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.samuellichlyter.cronos"];
     projectArray = [cronosDefaults valueForKey:@"projectTitlesArray"];
-    if ([projectArray isEqualToArray:@[]]) {
+    if ([projectArray isEqualToArray:@[]] || projectArray == nil) {
         [emptyLabel setHidden:NO];
     } else {
         [self configureTableWithData:projectArray];
@@ -54,6 +54,7 @@
         NSString *context = [projectArray objectAtIndex:rowIndex];
         return context;
     }
+    
     return nil;
 }
 
@@ -61,8 +62,22 @@
     NSArray *cannedResponses = [NSArray arrayWithObjects:@"Homework", @"App Development", @"Random", nil];
     [self presentTextInputControllerWithSuggestions:cannedResponses allowedInputMode:WKTextInputModeAllowEmoji completion:^(NSArray *results){
         if (results && results.count > 0) {
+            
+            //retrieve result and add to project array
             id aResult = [results objectAtIndex:0];
             NSLog(@"Selected: %@", aResult);
+            NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:projectArray];
+            [mutableArray addObject:aResult];
+            projectArray = (NSArray*)mutableArray;
+            
+            //hide empty label
+            [emptyLabel setHidden:YES];
+            
+            //save data to cronosDefaults
+            NSUserDefaults *cronosDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.samuellichlyter.cronos"];
+            [cronosDefaults setValue:projectArray forKey:@"projectTitlesArray"];
+            
+            [self configureTableWithData:projectArray];
         } else {
             [self dismissTextInputController];
         }

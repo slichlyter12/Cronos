@@ -11,5 +11,6 @@
 @interface ProjectsTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSUserDefaults *cronosDefaults;
 
 @end

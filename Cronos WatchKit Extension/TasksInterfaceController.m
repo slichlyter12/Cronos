@@ -28,11 +28,15 @@
     NSUserDefaults *cronosDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.samuellichlyter.cronos"];
     NSString *taskKey = [NSString stringWithFormat:@"%@_tasks", self.projectTitle];
     taskArray = [cronosDefaults valueForKey:taskKey];
-    if ([taskArray isEqualToArray:@[]]) {
+    
+    if ([taskArray isEqualToArray:@[]] || taskArray == nil) {
         [emptyLabel setHidden:NO];
     } else {
+        [emptyLabel setHidden:YES];
         [self configureTableWithData:taskArray];
     }
+    
+    [self setTitle:self.projectTitle];
 }
 
 - (void)configureTableWithData:(NSArray*)tableData {
@@ -46,7 +50,29 @@
 }
 
 - (void)doAddTask:(id)sender {
-    NSLog(@"Add Task");
+    NSArray *cannedResponses = [NSArray arrayWithObjects:@"Homework", @"App Development", @"Random", nil];
+    [self presentTextInputControllerWithSuggestions:cannedResponses allowedInputMode:WKTextInputModeAllowEmoji completion:^(NSArray *results){
+        if (results && results.count > 0) {
+            
+            //retrieve result and add to task array
+            id aResult = [results objectAtIndex:0];
+            NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:taskArray];
+            [mutableArray addObject:aResult];
+            taskArray = (NSArray*)mutableArray;
+            
+            //hide empty label
+            [emptyLabel setHidden:YES];
+            
+            //save data to cronosDefaults
+            NSUserDefaults *cronosDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.samuellichlyter.cronos"];
+            NSString *taskKey = [NSString stringWithFormat:@"%@_tasks", self.projectTitle];
+            [cronosDefaults setValue:taskArray forKey:taskKey];
+            
+            [self configureTableWithData:taskArray];
+        } else {
+            [self dismissTextInputController];
+        }
+    }];
 }
 
 - (void)willActivate {
@@ -60,6 +86,3 @@
 }
 
 @end
-
-
-
