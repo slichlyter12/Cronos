@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
 <<<<<<< HEAD
+<<<<<<< HEAD
    LastUpgradeVersion = "0630"
+=======
+   LastUpgradeVersion = "0640"
+>>>>>>> master
 =======
    LastUpgradeVersion = "0640"
 >>>>>>> master
@@ -25,6 +29,7 @@
             </BuildableReference>
          </BuildActionEntry>
 <<<<<<< HEAD
+<<<<<<< HEAD
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
@@ -41,6 +46,8 @@
          </BuildActionEntry>
 =======
 >>>>>>> master
+=======
+>>>>>>> master
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +56,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+<<<<<<< HEAD
 <<<<<<< HEAD
          <TestableReference
             skipped = "NO">
@@ -60,6 +68,8 @@
                ReferencedContainer = "container:Cronos.xcodeproj">
             </BuildableReference>
          </TestableReference>
+=======
+>>>>>>> master
 =======
 >>>>>>> master
       </Testables>

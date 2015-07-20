@@ -4,6 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+<<<<<<< HEAD
 		<key>Cronos 2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,16 +34,30 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
+=======
+		<key>Cronos.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+>>>>>>> master
 		</dict>
 		<key>Glance - Cronos WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>5</integer>
+=======
+			<integer>0</integer>
+>>>>>>> master
 		</dict>
 		<key>Notification - Cronos WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>6</integer>
+=======
+			<integer>1</integer>
+>>>>>>> master
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -57,6 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< HEAD
 		<key>434CF63E1AF4600200857D0E</key>
 		<dict>
 			<key>primary</key>
@@ -67,6 +83,8 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+=======
+>>>>>>> master
 		<key>437B6C451AE6054200F86669</key>
 		<dict>
 			<key>primary</key>
