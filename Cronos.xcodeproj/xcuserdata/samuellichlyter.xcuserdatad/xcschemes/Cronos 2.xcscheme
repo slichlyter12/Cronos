@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-<<<<<<< HEAD
-   LastUpgradeVersion = "0630"
-=======
    LastUpgradeVersion = "0640"
->>>>>>> master
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -24,23 +20,6 @@
                ReferencedContainer = "container:Cronos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-<<<<<<< HEAD
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "434CF6481AF4600200857D0E"
-               BuildableName = "CronosKitTests.xctest"
-               BlueprintName = "CronosKitTests"
-               ReferencedContainer = "container:Cronos.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-=======
->>>>>>> master
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,19 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-<<<<<<< HEAD
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "434CF6481AF4600200857D0E"
-               BuildableName = "CronosKitTests.xctest"
-               BlueprintName = "CronosKitTests"
-               ReferencedContainer = "container:Cronos.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-=======
->>>>>>> master
       </Testables>
       <MacroExpansion>
          <BuildableReference
