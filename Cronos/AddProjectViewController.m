@@ -82,13 +82,15 @@
     }
     
     //save
-    NSError *error = nil;
-    [self.managedObjectContext save:&error];
-    
-    //check for errors
-    if (error) {
-        NSLog(@"error: %@ %@", error, [error userInfo]);
-        abort();
+    if ([self.managedObjectContext hasChanges]) {
+        NSError *error = nil;
+        [self.managedObjectContext save:&error];
+        
+        //check for errors
+        if (error) {
+            NSLog(@"error: %@ %@", error, [error userInfo]);
+            abort();
+        }
     }
         
 }

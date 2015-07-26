@@ -29,27 +29,41 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     self.managedObjectContext = delegate.managedObjectContext;
     
     self.cronosDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.samuellichlyter.cronos"];
     
-    [self loadData];
-    [self checkCompatibility];
-    [self shareProjectTitles];
-    [self shareTaskTitles];
+    // Initialize the refresh control
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidAppear:(BOOL)animated {
+    [self refreshData];
+    NSLog(@"ending viewDidAppear");
+}
+
+- (void)refreshData {
     [self loadData];
-    [self shareProjectTitles];
-    [self shareTaskTitles];
+    [self checkCompatibility];
     [self.tableView reloadData];
+    if ([self.refreshControl isRefreshing]) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *title = [NSString stringWithFormat:@"Last updated: %@", [formatter stringFromDate:[NSDate date]]];
+        NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+        NSAttributedString *attributedString = [[NSAttributedString alloc] initWithString:title attributes:attributesDictionary];
+        self.refreshControl.attributedTitle = attributedString;
+        [self.refreshControl endRefreshing];
+    }
 }
 
 - (void)loadData {
+    NSLog(@"Starting Load Data");
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setFetchBatchSize:20];
     
@@ -80,23 +94,15 @@
         [phoneTitles addObject:(id)title];
     }
     
-    //create syncing alert controller
-    UIAlertController *syncAlert = [UIAlertController alertControllerWithTitle:@"Syncing..." message:nil preferredStyle:UIAlertControllerStyleAlert];
-    
     //checking state of data
-//    if ([phoneTitles isEqualToArray:watchTitles]) {
-//        return;
-//    } else
-    
-    
     if (watchTitles.count == phoneTitles.count && [watchTitles isEqualToArray:phoneTitles]) {
         NSLog(@"Arrays are the same, continue");
-        return;
+    } else if (watchTitles == NULL && [phoneTitles isEqualToArray:[NSMutableArray array]]){
+        NSLog(@"There are no Projects, nothing to sync");
     } else if (watchTitles.count > phoneTitles.count) {
         //if projects were added to watch, update phone
         
         NSLog(@"Error: data out of sync");
-        [self presentViewController:syncAlert animated:YES completion:nil];
         
         NSLog(@"phoneTitles: %@ watchTitles: %@", phoneTitles, watchTitles);
         
@@ -150,7 +156,12 @@
             abort();
         }
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+    } else if (phoneTitles.count > watchTitles.count) {
+        
+        NSLog(@"Sharing all data with CronosDefaults");
+        [self shareProjectTitles];
+        [self shareTaskTitles];
+        
     } else {
         UIAlertController *unknownAlert = [UIAlertController alertControllerWithTitle:@"Uh Oh!" message:@"An unkown error ocurred" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *sucksAction = [UIAlertAction actionWithTitle:@"well that sucks" style:UIAlertActionStyleDefault handler:nil];
@@ -159,8 +170,8 @@
     }
     
     //check if tasks are the same
-    NSLog(@"Starting task sync");
     for (NSInteger i = 0; i < watchTitles.count; i++) {
+        NSLog(@"Starting task sync");
         NSString *key = [NSString stringWithFormat:@"%@_tasks", [watchTitles objectAtIndex:i]];
         NSArray *watchTasks = (NSArray*)[self.cronosDefaults objectForKey:key];
         
@@ -181,6 +192,7 @@
             }
         }
     }
+    
 }
 
 - (void)shareProjectTitles {
@@ -215,6 +227,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
+    if (projectArray.count > 0) {
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        self.tableView.backgroundView = nil;
+        return 1;
+    } else {
+        UILabel *emptyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        
+        emptyLabel.text = @"You have no projects. Add one by tapping the plus in the top right.\n\nOr pull to refresh if you created projects on your Apple Watch.";
+        emptyLabel.textColor = [UIColor blackColor];
+        emptyLabel.numberOfLines = 0;
+        emptyLabel.textAlignment = NSTextAlignmentCenter;
+//        emptyLabel.font = [UIFont systemFontOfSize:20];
+        emptyLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+        [emptyLabel sizeToFit];
+        
+        self.tableView.backgroundView = emptyLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    
     return 1;
 }
 
@@ -244,21 +275,24 @@
 }
 
 
-
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        // Select project to delete
         Project *projectToDelete = [projectArray objectAtIndex:indexPath.row];
+        
+        // Delete the row from the data source
         [self.managedObjectContext deleteObject:projectToDelete];
         NSError *error = nil;
         [self.managedObjectContext save:&error];
+                
+        // Sync managedObjectContext to projectArray
         [self loadData];
+        [self shareProjectTitles];
+        
+        // Animate delete
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-//    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//    }   
+    }  
 }
 
 
